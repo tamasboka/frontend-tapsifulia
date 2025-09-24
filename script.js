@@ -24,9 +24,10 @@ function applyFilter(arr) {
     console.log(min)
     const max = document.getElementById("max").value;
     for (const obj of arr) {
-        if (obj["min"] > min) {
+        console.log(obj)
+        if (obj["value"] >= min) {
 
-            filtered_arr.add(obj)
+            filtered_arr.push(obj)
         }
     }
     return filtered_arr;
