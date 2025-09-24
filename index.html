@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="text-center">
+        <h3>A Tapsifülia Gazdasági Dashboard</h3>
+    </header>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <form method="POST" class="align-items-center d-flex">
+                <label for="">Kategória</label>
+                <select name="category" id="category" class="form-select" style="width: 100px;">
+                    <option value="all">Összes</option>
+                    <option value="szegeny">Szegény</option>
+                    <option value="kozeposztaly">Közép</option>
+                    <option value="gazdag">Gazdag</option>
+                </select>
+                <label for="min">Minimum érték</label>
+                <input class="form-control" type="number" name="min" id="min">
+                <label for="min">Maximum érték</label>
+                <input class="form-control" type="number" name="max" id="max">
+                <input class="btn btn-success" type="submit" value="Szűrés alkalmazása">
+            </form>
+        </div>
+        <div id="tableDiv">
+            
+        </div>
+    </div>
+</body>
+</html>
