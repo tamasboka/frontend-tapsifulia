@@ -18,6 +18,7 @@ filterbtn.addEventListener("click", (e) => {
 })
 
 function applyFilter(arr) {
+    document.getElementById("tableDiv").innerHTML = "";
     /*let filtered_arr = []
     const category = document.getElementById("category").value;
     const min = document.getElementById("min").value;
@@ -48,8 +49,8 @@ function applyFilter(arr) {
     }
     const minValue = parseInt(document.querySelector("#min").value) || 0;
     const maxValue = parseInt(document.querySelector("#max").value) || Infinity;
-    filtered_arr = filtered_arr.filter(item => item.value >= minValue && item.value <= minValue)
-    
+    filtered_arr = filtered_arr.filter(item => item.value >= minValue && item.value <= maxValue)
+    return filtered_arr
 }
 
 function createTableHead(arr, parent) {
