@@ -21,13 +21,22 @@ function applyFilter(arr) {
     let filtered_arr = []
     const category = document.getElementById("category").value;
     const min = document.getElementById("min").value;
-    console.log(min)
     const max = document.getElementById("max").value;
+    if (isNaN(min)) {
+        min = 0;
+    }
+    if (isNaN(max)) {
+        max = 10000;
+    }
     for (const obj of arr) {
-        console.log(obj)
-        if (obj["value"] >= min) {
-
-            filtered_arr.push(obj)
+        //console.log(obj["value"])
+        if (obj["value"] >= min && obj["value"] <= max) {
+            if (category === "all") {
+                filtered_arr.push(obj)
+            }
+            else if (category === obj["category"]) {
+                filtered_arr.push(obj)
+            }
         }
     }
     return filtered_arr;
