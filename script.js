@@ -17,6 +17,22 @@ filterbtn.addEventListener("click", (e) => {
     createTable(filtered_arr, tableDiv)
 })
 
+function mostCategory(arr) {
+    const category_count = {
+        "szegények pénze": 0,
+        "középosztály pénze": 0,
+        "gazdagok pénze" : 0
+    }
+    for (const obj of arr) {
+        category_count[obj["category"]] += obj["value"];
+    }
+    console.log(category_count)
+}
+
+function sortByValue(arr) {
+    arr.sort((a, b) => a.value - b.value);
+}
+
 function applyFilter(arr) {
     document.getElementById("tableDiv").innerHTML = "";
     /*let filtered_arr = []
@@ -86,4 +102,6 @@ function createTable(arr, div) {
 
 const tableDiv = document.getElementById("tableDiv")
 
+sortByValue(values)
+console.log(mostCategory(values))
 createTable(values, tableDiv)
