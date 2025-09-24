@@ -18,14 +18,14 @@ filterbtn.addEventListener("click", (e) => {
 })
 
 function applyFilter(arr) {
-    let filtered_arr = []
+    /*let filtered_arr = []
     const category = document.getElementById("category").value;
     const min = document.getElementById("min").value;
     const max = document.getElementById("max").value;
-    if (isNaN(min)) {
+    if (!isFinite(min)) {
         min = 0;
     }
-    if (isNaN(max)) {
+    if (!isFinite(max)) {
         max = 10000;
     }
     for (const obj of arr) {
@@ -40,6 +40,16 @@ function applyFilter(arr) {
         }
     }
     return filtered_arr;
+    */
+    let filtered_arr = [...arr];
+    const selectedFilter = document.querySelector('#category').value
+    if (selectedFilter !== 'all') {
+        filtered_arr = filtered_arr.filter(item => item.category === selectedFilter)
+    }
+    const minValue = parseInt(document.querySelector("#min").value) || 0;
+    const maxValue = parseInt(document.querySelector("#max").value) || Infinity;
+    filtered_arr = filtered_arr.filter(item => item.value >= minValue && item.value <= minValue)
+    
 }
 
 function createTableHead(arr, parent) {
