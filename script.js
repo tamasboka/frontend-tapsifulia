@@ -32,7 +32,7 @@ function createTableRow(obj, parent) {
 
 function createTable(arr, div) {
     const table = document.createElement("table")
-    table.classList.add("table")
+    table.classList.add("table", "text-center")
     table.id = "table";
     div.appendChild(table)
     createTableHead(th, table);
