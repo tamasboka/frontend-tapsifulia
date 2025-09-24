@@ -10,6 +10,28 @@ const values = Array.from({length: 20}, (_, index) => {
 
 const th = ["ID", "Érték (fülium)", "Típus", "Kategória"]
 
+const filterbtn = document.getElementById("applybtn")
+filterbtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    const filtered_arr = applyFilter(values);
+    createTable(filtered_arr, tableDiv)
+})
+
+function applyFilter(arr) {
+    let filtered_arr = []
+    const category = document.getElementById("category").value;
+    const min = document.getElementById("min").value;
+    console.log(min)
+    const max = document.getElementById("max").value;
+    for (const obj of arr) {
+        if (obj["min"] > min) {
+
+            filtered_arr.add(obj)
+        }
+    }
+    return filtered_arr;
+}
+
 function createTableHead(arr, parent) {
     const tr = document.createElement("tr")
     for (const title of arr) {
