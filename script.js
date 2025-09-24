@@ -8,6 +8,17 @@ const values = Array.from({length: 20}, (_, index) => {
     }
 })
 
+const th = ["ID", "Érték (fülium)", "Típus", "Kategória"]
+
+function createTableHead(arr, parent) {
+    const tr = document.createElement("tr")
+    for (const title of arr) {
+        const th = document.createElement("th")
+        th.innerHTML = title;
+        tr.appendChild(th)
+    }
+    parent.appendChild(tr)
+}
 
 function createTableRow(obj, parent) {
     const tr = document.createElement("tr")
@@ -24,6 +35,7 @@ function createTable(arr, div) {
     table.classList.add("table")
     table.id = "table";
     div.appendChild(table)
+    createTableHead(th, table);
     for (const obj of arr) {
         createTableRow(obj, table)
     }
